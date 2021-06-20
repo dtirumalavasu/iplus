@@ -61,10 +61,12 @@ public class UserDaoImpl implements UserDao{
 	public User updateUser(User user) {
 		sessionFactory.getCurrentSession().saveOrUpdate(user);
 		User u=(User) sessionFactory.getCurrentSession().get(User.class,user.getUserName());
+		System.out.println(  "helliiiiiiii"+ u);
 		if(u != null){
 			return u;
 		}else{
 			return null;
+			
 		}
 	}
 
